@@ -1,17 +1,9 @@
-import sys, string
+import sys
 
-input_file = open(sys.argv[1]) 
-linesWithText = 0
-
-try:
-    for line in input_file:
-        line = string.strip(line)
-        if line :
-        	if (line[0] == '#') :
-        		continue
-        	else :
-        		linesWithText = linesWithText + 1
-
-finally:
-    input_file.close()
-print linesWithText
+lines = 0
+with open(sys.argv[1]) as f:
+    for line in f:
+        line = line.strip()
+        if line and not line.startswith('#'):
+            lines += 1
+print lines

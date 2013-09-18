@@ -15,8 +15,7 @@ def change (coins) :
 ##### STRIP VOWELS #####
 #Precondition: the s paramter must be a string
 def strip_vowels (s) :
-    for eachLetter in ['A','a','E', 'e','I', 'i','O', 'o','U', 'u'] :
-        s = s.replace(eachLetter, '')
+    s = s.translate(None, 'AaEeIiOoUu')
     return s
 
 
@@ -32,37 +31,24 @@ def scramble (word) :
 ##### POWERS OF 2 #####
 #Precondition: the number parameter must be a positive real number
 def powers_of_two (number) :
-    power = 0
-    while pow(2, power) <= number :
-        results = pow(2, power)
-        yield results
-        power = power + 1
+    result = 1
+    while result <= number:
+        yield result
+        result *= 2
 
 ##### POWERS #####
 #Precondition: the base and limit parameter must be positive real numbers
 def powers (base, limit) :
-    power = 0
-    while pow(base, power) <= limit :
-        results = pow(base, power)
-        yield results
-        power = power + 1
+    result = 1
+    while result <= limit:
+        yield result
+        result *= base
 
 
 ##### INTERLEAVE #####
 #Precondition: the list1 and list2 parameters must be of type lists
 def interleave (list1, list2) :
-    lists = [list1, list2]
-    newList = [x for t in zip(*lists) for x in t]
-    
-    if len(list1) > len(list2) :
-        for y in list1[len(list2):len(list1)] :
-        	newList.append(y)
-    
-    if len(list2) > len(list1) :
-        for z in list2[len(list1):len(list2)] :
-            newList.append(z)
-
-    return newList
+    return [y for x in zip(list1, list2) for y in x] + list1[len(list2):] + list2[len(list1):]
 
 
 ##### STUTTER #####
