@@ -37,4 +37,4 @@ alert("HELLO");
 alert(stripVowels("ea"));
 
 
-// THIS IS A THE SHORTENED NEW CHANGE 
+// THIS IS THE MASTER CHANGE
