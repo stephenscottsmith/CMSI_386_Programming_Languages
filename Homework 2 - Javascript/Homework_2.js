@@ -37,4 +37,4 @@ alert("HELLO");
 alert(stripVowels("ea"));
 
 
-// THIS IS A THE SHORTENED NEW CHANGE 
+// :LKSJF:LSDJKF:LSDJKF:LDFJK:LDFJKS:LSDFJK
