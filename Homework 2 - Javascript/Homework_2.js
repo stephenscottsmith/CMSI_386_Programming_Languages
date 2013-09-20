@@ -35,3 +35,6 @@ var stripVowels = function (s) {
 };
 alert("HELLO");
 alert(stripVowels("ea"));
+
+
+// THIS IS A NEW CHANGE FOR THE NEW BRANCH TESTING IN GIT
