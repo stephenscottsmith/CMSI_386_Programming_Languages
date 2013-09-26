@@ -351,3 +351,27 @@ $(function () {
 // Prefixes
 // Precondition: the s parameter should evaulate to a string
 // JSFIDDLE: http://jsfiddle.net/stephenscottsmith/X6RYG/7/
+
+// HTML:
+<p>
+    <input type="text" id="prefixField">
+    <input type="button" value="Create Prefixes" onclick="createPrefixes(prefixField.value);">
+</p>
+<p>        
+    <ul id="list"></ul>
+</p>
+
+// Javascript:
+// NOTE: you said it was cool to <li>'s
+function createPrefixes (s) {
+    $("li").remove();
+    var i = 0;    
+    function show () {
+        if (i <= s.length) {
+            $("#list").append( '<li>' + s.substring(0,i) + '</li>' );
+            i+=1;
+            setTimeout(function() {show()}, 1000);
+        }         
+    }
+    show();
+}
