@@ -1,4 +1,4 @@
-// JSFIDDLE: http://jsfiddle.net/stephenscottsmith/92bjr/
+// Master JSFiddle for problems 1-8 and unit tests: http://jsfiddle.net/stephenscottsmith/92bjr/26/
 
 // Precondition: amount must be a non-negative integer
 function change(amount) {
@@ -336,9 +336,13 @@ $(function () {
         
         deepEqual(wordCount("--------_(*&&^%$#"), {}, "All objects should be removed and return an empty object");
         
-        deepEqual(wordCount("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'"), {"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'":1}, "Nothing should be removed from the string of every character that should not be removed.");
+        deepEqual(wordCount(""), {}, "Empty string should result in empty object");
+        
+ deepEqual(wordCount("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'"), {"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'":1}, "Nothing should be removed from the string of every character that should not be removed.");
     
         deepEqual(wordCount("-a-a-a-a"), {"a":4}, "4 of the same word");
+        
+        deepEqual(wordCount("Javascript"), {"javascript":1}, "1 word, no characters to be removed");
     
     });
     
