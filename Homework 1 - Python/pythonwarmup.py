@@ -61,3 +61,39 @@ def stutter (listArgs) :
         newList.append(x)
     return newList
 
+
+def mapIterate (f, l) :
+    result = []
+
+    for x in l :
+        y = x
+        for z in range(x) :
+            y = f(y)
+
+        result.append(y)
+    return result
+
+def mul(x) :
+    return x*2
+
+print mapIterate(mul, [1, 2, 3])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
